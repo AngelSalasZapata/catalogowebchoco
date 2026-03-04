@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     background-color: rgb(231, 219, 207);
     color: #6D5C57;
@@ -6,7 +10,7 @@ body{
     font-family: "Quicksand", sans-serif;
 }
 
-/* HEADER */
+
 header {
     background: linear-gradient(90deg, #D8C2CC, #F2C6C2);
     padding: 15px 30px;
@@ -17,7 +21,7 @@ header {
     z-index: 10;
 }
 
-/* LOGO */
+
 .logo {
     display: flex;
     align-items: center;
@@ -30,7 +34,8 @@ header {
     margin: 0;
 }
 
-/* MENÚ */
+/*menu*/
+
 nav ul.lista {
     display: flex;
     gap: 25px;
@@ -54,7 +59,6 @@ nav ul li a:hover {
 }
 
 
-/* SECCIÓN GENERAL */
 main {
     margin: 20px;
 }
@@ -62,21 +66,20 @@ main {
 section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #C08A86;
+    color: #6e5452;
 }
 
-/* CATÁLOGO */
+
 #catalogo {
     margin-top: 30px;
 }
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-/* TARJETA PRODUCTO */
 .producto {
     background: linear-gradient(180deg, #FFFFFF, #F4EFEA);
     padding: 20px;
@@ -92,11 +95,11 @@ section h2 {
     box-shadow: 0 12px 20px rgba(192, 138, 134, 0.35);
 }
 
-/* IMÁGENES */
+
 .producto img {
     width: 100%;
-    max-width: 440px;
-    height: 220px;
+    height: auto;
+    max-width: 100%;
     object-fit: cover;
     margin: 0 auto 15px auto;
     display: block;
@@ -104,7 +107,6 @@ section h2 {
     border: 3px solid #F2C6C2;
 }
 
-/* TEXTO */
 .producto h3 {
     margin-bottom: 10px;
     color: #6D5C57;
@@ -114,7 +116,7 @@ section h2 {
     margin-bottom: 10px;
 }
 
-/* PRECIO */
+
 .precio {
     font-size: 1.3rem;
     color: #C08A86;
@@ -122,7 +124,6 @@ section h2 {
     font-weight: bold;
 }
 
-/* BOTÓN PRODUCTO */
 .producto button {
     padding: 10px 22px;
     background-color: #F2C6C2;
@@ -140,7 +141,6 @@ section h2 {
 }
 
 
-/* FOOTER */
 footer {
     background: #6D5C57;
     color: white;
@@ -150,7 +150,7 @@ footer {
     margin-top: 30px;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 900px) {
     .productos {
         grid-template-columns: repeat(2, 1fr);
@@ -202,4 +202,22 @@ footer {
 .miniaturas img:hover {
     transform: scale(1.1);
     border: 2px solid #C08A86;
+}
+
+@media (max-width: 500px) {
+
+    .miniaturas {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .miniaturas img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .producto {
+        padding: 15px;
+    }
+
 }
